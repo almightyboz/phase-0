@@ -32,3 +32,5 @@ Several recent and high-profile scientific studies show evidence that mindfulnes
 ##1.4 Forking and Cloning Reflection##
 
 Sometimes you want to create a new blank repository that you can name and specify permissions. If you want to access an existing repository, make a copy on your GH page, and have GitHub send it to your local computer, you have to fork it. Once you have the repository’s exact URL, you click “fork” on the site. Once it’s forked, you copy the url of the forked repository. Then go to your command line, and tell your computer to use your git program to take the information in the repository and make a copy for your local machine. I honestly didn’t struggle too much with this, because I took a class on Git months ago, but the refresher was very helpful in restoring what I forgot, particularly the distinction between cloning and forking.
+
+
