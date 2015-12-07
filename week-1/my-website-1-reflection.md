@@ -1,0 +1,4 @@
+http://almightyboz.github.io/
+
+Creating a respository means clicking a button and following prompts. Cloning it entails getting the link and entering it into the command line.
+Open Source software is computer software for which the source code is made publically available, by the author, with a special copyright license. The license itself can take [many forms](https://en.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licenses), but generally provides any person with the the right to read, change, and distribute it at any time. The author still owns the copyright on the code, the license just permits others to use it. Approving individual permissions merely to use software can be time-consuming, licensing gets one's code into the world while still owning the initial idea.
