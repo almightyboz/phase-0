@@ -1,4 +1,4 @@
-![Image of my site's map](/imgs/site_sketch.jpg)
+![Image of my site's map](../imgs/site_sketch.jpg)
 The six phases of web design (with applications) are:
 1. Information Gathering
 * Understanding the purpose, goals, target audience, and content on the site.
