@@ -1,3 +1,3 @@
-![Here is my wireframe.](https://github.com/almightyboz/phase-0/blob/master/week-2/imgs/wireframe-index.png)
-![And here is my index page code.](https://github.com/almightyboz/almightyboz.github.io/blob/master/blog/index.html)
+[Here is my wireframe.](https://github.com/almightyboz/phase-0/blob/master/week-2/imgs/wireframe-index.png)
+[And here is my index page code.](https://github.com/almightyboz/almightyboz.github.io/blob/master/blog/index.html)
 Translating the wireframe was a lot more painless than I feared it would be. I really enjoyed wireframing and I have a pretty cohesive idea for my page, so I was a little afraid of the fact that I cannot reasonably create the image in my mind. But the fact that the site doesn't have to look a particular way just yet was was a huge help. Learning about the semantic elements was interesting, and I understood my site better when I structured the content along [these lines](http://www.w3schools.com/html/img_sem_elements.gif). But I am very excited to create the real site, I am proud of my silly little idea and I want to make it a reality.
