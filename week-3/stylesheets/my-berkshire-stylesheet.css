@@ -1,0 +1,63 @@
+p {
+  color: #000080;
+}
+
+a {
+  color: #800080;
+}
+
+a:visited {
+  color: #ff0000;
+}
+
+html {
+  background-color: #ffffff;
+}
+
+#Left {
+  float: left;
+  display: block;
+}
+#Right{
+  float: right;
+  display: block;
+}
+
+ul li {
+  font-size: 12px;
+  color: black;
+}
+
+header p {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+  /*Line Break*/
+}
+
+.letters {
+  font-size: 24px;
+}
+
+#Geico {
+  border-top: 1px solid black;
+  clear: both;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+
+#Copyright {
+  padding-top: 10px;
+  border-top: 1px solid black;
+}
+
+.line {
+  display: block;
+}
+
+/* Classes are named entities can be used multiple times are are denoted in CSS by a period. We used classes for the larger capital letters within blocks of text. IDs should only be used once and are denoted by hashes/octothorpes. We used IDs for the left and right columns we created
