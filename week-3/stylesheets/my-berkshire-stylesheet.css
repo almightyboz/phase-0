@@ -60,6 +60,7 @@ header p {
   display: block;
 }
 
-/* Classes are named entities can be used multiple times are are denoted in CSS by a period.
-We used classes for the larger capital letters within blocks of text. IDs should only be used once and are denoted by hashes/octothorpes.
-We used IDs for the left and right columns we created.*/
+/* Classes are named entities can be used multiple times are are denoted in CSS by a period. IDs should only be used once and are denoted by hashes/octothorpes.
+We used classes for the larger capital letters within blocks of text.
+We used IDs for the left and right columns we created.
+Our site had cleaner code, we had no empty p tags to denote an empty line, and our heading made a little more sense.*/
