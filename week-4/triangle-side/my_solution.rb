@@ -1,5 +1,7 @@
-# I worked on this challenge [by myself, with: ].
+#Triangle Side Lengths
 
+
+# I worked on this challenge with: Kathryn.
 
 # Your Solution Below
 
