@@ -19,7 +19,7 @@ ___
 Strings are
 
 *What are local variables? Why and when would you use them?*
-
+THeir names start with lower cases or underscores, they can live within
 
 *How was this challenge? Did you get a good review of some of the basics?*
 
