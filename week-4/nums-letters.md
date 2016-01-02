@@ -8,7 +8,8 @@ ___
 hours_in_year = 24*365.25
 puts "There are #{hours_in_year} hours in a year"
 minutes_in_decade= 60*24*365.25*10
-print "There are #{minutes_in_decade} minutes in a decade"```
+print "There are #{minutes_in_decade} minutes in a decade"
+```
 ___
 My code for the following exercises:
 *[Defining Variables](defining_variables.rb)
