@@ -16,8 +16,10 @@ puts "Not bad, but I think #{number} is a better number."
 
 
 # I don't know how to make these hyperlinks, so you'll have to copy-paste these:
-#
-#
+# FORMATTED ADDRESS
+# https://github.com/almightyboz/phase-0/blob/master/week-4/address/my_solution.rb
+# MATH METHODS
+# https://github.com/almightyboz/phase-0/blob/master/week-4/math/my_solution.rb
 
 # One defines a local variable similarly to all variables. A lowercase, non-spaced, sequence of characters that begins with a character or an underscore, a single equals sign, then the code that will be stored in the local variable.
 
