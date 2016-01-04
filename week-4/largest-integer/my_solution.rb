@@ -12,7 +12,7 @@
 
 # Your Solution Below
 def largest_integer(list_of_nums)
-      answer = list_of_nums[0]
+    answer = list_of_nums[0]
     list_of_nums.each do |num|
       if num > answer
         answer = num
