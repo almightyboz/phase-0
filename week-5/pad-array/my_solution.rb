@@ -108,4 +108,4 @@ end
 # When you refactored, did you find any existing methods in Ruby to clean up your code?
 # How readable is your solution? Did you and your pair choose descriptive variable names?
 # What is the difference between destructive and non-destructive methods in your own words?
-#
+# REMEMBER THAT NEXT COMMIT MESSAGE WILL BE "ADDING REFLECITON"
