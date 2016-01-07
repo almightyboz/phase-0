@@ -20,13 +20,12 @@
 # What are the steps needed to solve the problem?
 
 # create variable - empty solution array
-# set variable for minimum size - equal zero - will change after call
 # IF minimum size <= array size
 #   return array
 # END
 
-# When length of the array < minimum number
-# variable that is minimum number minus array
+# IF length of the array < minimum number
+# create variable that is the minimum number minus array
 # => take that number and add that many value objects to the end
 
 # when the pad method is called, return a new object
@@ -98,9 +97,9 @@ end
 
 # 4. Reflection
 
-# We were sucessful in the sense that we wrote pseudocode and were eventually able to get a working solution to the problem. But we had to do a lot of the work while working through the problem. And we didn't factor in how the solution array had to be an entirely different object than the input array, so
-#
-#
+# We were sucessful in the sense that we wrote pseudocode and were eventually able to get a working solution to the problem. But we had to do a lot of the work while working through the problem. And we didn't realize that the solution array had to be an entirely different object than the input array, so we had to mess with the code to produce that result until the end
+# It took us some time to translate it into code. We initially didn't add the objects in the original array to the new array, and it took some work to find the best way to do that. We ran into lots of errors while getting the code to work, and used printed calls in the middle of the loop to watch the loops working and identify bugs that way.
+# Our initial solution was super unsuccessful. I have long since overwritten it, we got lots of errors. It failed to pad, or it didn't include the first few items in the array, or it returned the solution array as the same object as the initial array. I think our code was problematic because we didn't take enough time in pseudocode to really run through scenarios and break things into the tiniest steps. We left a lot to refactoring.
 #
 #Were you successful in breaking the problem down into small steps?
 # Once you had written your pseudocode, were you able to easily translate it into code? What difficulties and successes did you have?
