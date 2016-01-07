@@ -68,3 +68,27 @@ end
 # I initially had a loop that basically said "while true", and a nested if statement whose else condition was just "break".
 # I do think my refactored solution is more readable. It isn't redundant (most egregious is that I basically have a "while true" above a conditional), and I feel good about changing the name of the variable, because I feel the name in the refactored version is better.
 
+
+# def separate_comma(integer)
+#   answer_string = integer.to_s.reverse
+#   if answer_string.length < 4
+#     return answer_string
+#   end
+#   index_counter = 0
+#   case answer_string.length % 3
+#   when 0
+#     answer_string.insert(2, ",")
+#     index_counter += 3
+#   when 1
+#     answer_string.insert(0, ",")
+#     index_counter += 1
+#   when 2
+#     answer_string.insert(1, ",")
+#     index_counter += 2
+#   end
+#   while answer_string[index_counter + 3] != nil
+#     answer_string.insert((index_counter + 3), ",")
+#     index_counter += 4
+#   end
+#   return answer_string
+# end
