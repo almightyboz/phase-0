@@ -97,14 +97,12 @@ end
 
 # 4. Reflection
 
-# We were sucessful in the sense that we wrote pseudocode and were eventually able to get a working solution to the problem. But we had to do a lot of the work while working through the problem. And we didn't realize that the solution array had to be an entirely different object than the input array, so we had to mess with the code to produce that result until the end
-# It took us some time to translate it into code. We initially didn't add the objects in the original array to the new array, and it took some work to find the best way to do that. We ran into lots of errors while getting the code to work, and used printed calls in the middle of the loop to watch the loops working and identify bugs that way.
+# We were sucessful in the sense that we wrote pseudocode and were eventually able to get a working solution to the problem. But we had to do a lot of the work while working through the problem. (For one example, we didn't realize that the solution array had to be an entirely different object than the input array, so we had to mess with the code to produce that result until the end)
+# It took us some time to translate our pseudocode into working code. We initially didn't add the objects in the original array to the new array, and it took some work to find the best way to do that. We ran into lots of errors while getting the code to work, and used printed calls in the middle of the loop to watch the loops working and identify bugs that way.
 # Our initial solution was super unsuccessful. I have long since overwritten it, we got lots of errors. It failed to pad, or it didn't include the first few items in the array, or it returned the solution array as the same object as the initial array. I think our code was problematic because we didn't take enough time in pseudocode to really run through scenarios and break things into the tiniest steps. We left a lot to refactoring.
-#
-#Were you successful in breaking the problem down into small steps?
-# Once you had written your pseudocode, were you able to easily translate it into code? What difficulties and successes did you have?
-# Was your initial solution successful at passing the tests? If so, why do you think that is? If not, what were the errors you encountered and what did you do to resolve them?
-# When you refactored, did you find any existing methods in Ruby to clean up your code?
-# How readable is your solution? Did you and your pair choose descriptive variable names?
-# What is the difference between destructive and non-destructive methods in your own words?
-# REMEMBER THAT NEXT COMMIT MESSAGE WILL BE "ADDING REFLECITON"
+#I found the clone() method when I was refactoring. It cleaned up my code substantially. It replaced three lines with one. I think that our solution is very readable now, I think that the variable names are descriptive, "solution_array" instead of "x" or "c_array"
+
+
+
+# Inputting a data object to a destructive method overwrites the actual structure of the data object. Comparitively, non-destructive methods return a new data structure. Among other things, this new structure is temporary and cannot be used outside the method. Ruby's  assigns each object an ID and uses IDs to keep track of objects during in operations. A destructive method's input and output have the same object id. A non-destrutive method's output has a different object id than the input. (I learned this after experimenting on how to return our pad method non-destructively.)
+# Programmers use destructive methods and modifications because they consume less of the computer's memory. Especially if the data structure in question is very large.
