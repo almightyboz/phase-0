@@ -10,7 +10,6 @@
 # is commented in the file.
 
 
-
 # 0. Pseudocode
 
 # What is the input?
