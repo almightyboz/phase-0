@@ -1,6 +1,6 @@
 # Research Methods
 
-# I spent 1.5 hours on this challenge.
+# I spent 2 hours on this challenge.
 
 i_want_pets = ["I", "want", 3, "pets", "but", "only", "have", 2]
 my_family_pets_ages = {"Evi" => 6, "Ditto" => 3, "Hoobie" => 3, "George" => 12, "Bogart" => 4, "Poly" => 4, "Annabelle" => 0}
@@ -19,7 +19,7 @@ my_family_pets_ages = {"Evi" => 6, "Ditto" => 3, "Hoobie" => 3, "George" => 12, 
 #     next
 # return the not so blank list
 
-#ORIGINAL SOLUTION
+# #ORIGINAL SOLUTION
 def my_array_finding_method(source, thing_to_find)
   answer_array = []
   source.each do |item|
@@ -30,7 +30,7 @@ def my_array_finding_method(source, thing_to_find)
   return answer_array
 end
 
-#REFACTORED SOLUTION
+# #REFACTORED SOLUTION
 def my_array_finding_method(source, thing_to_find)
   source.select {|item| item.to_s[thing_to_find]}
 end
@@ -46,7 +46,7 @@ end
 #     else, just keep going through
 # return the list of answers
 
-#ORIGINAL METHOD
+# #ORIGINAL METHOD
 def my_hash_finding_method(source, thing_to_find)
   answer_array = []
   source.each do |key, value|
@@ -57,7 +57,7 @@ def my_hash_finding_method(source, thing_to_find)
   return answer_array
 end
 
-#REFACTORED METHOD
+# #REFACTORED METHOD
 def my_hash_finding_method(source, thing_to_find)
   source.select {|key, value| value == thing_to_find}.keys
 end
@@ -78,7 +78,7 @@ end
 # Release 3: Reflect!
 # What did you learn about researching and explaining your research to others?
 #
-#
+# I learned to post early and often, as they say, and to compare different online sources for good information of methods, and practical uses of them.
 #
 #
 # Status API Training Shop Blog About Pricing
