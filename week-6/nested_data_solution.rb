@@ -111,8 +111,18 @@ startup_names.map! do |name|
   end
 end
 
+#REFACTORED BONUS
 startup_names.flatten!.map! {|name| name += "ly"}
 puts startup_names
 
-#
-#
+##################################
+
+#REFLECTION
+#What are some general rules you can apply to nested arrays?
+# Be careful when using puts to show the steps in one's code, because puts contains special sugar and will print each nested element in a newline, regardless of whether your method changed it in any way.
+
+#What are some ways you can iterate over nested arrays?
+# After an each, map, or collect method call, insert a line of code that determines whether an element in the array is a value or an array, and respond accurately. An array within an array within an array would need a two lines that "asks" if the element is an array.
+
+#Did you find any good new methods to implement or did you re-use one you were already familiar with? What was it and why did you decide that was a good option?
+# Because the specs didn't specify that our method had to be non-destructive, or even preserve the nested structure at all, we tried using the flatten!() method. It worked well because it made it into a one-D array that could be iterated through without nesting methods under it.
