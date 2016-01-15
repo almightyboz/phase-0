@@ -30,9 +30,38 @@
 
 # Initial Solution
 
-class GuessingGame
+# class GuessingGame
 
-  attr_reader :guess
+
+#   def initialize(answer)
+#     @answer = answer
+#   end
+
+#   def guess(guess)
+#     if guess < @answer
+#       return :low
+#     elsif guess > @answer
+#       return :high
+#       #return value
+#     else # guess == @answer
+#       return :correct
+#       #return value
+#     end
+#   end
+
+
+#   def solved?
+#     if guess(guess) == (:high || :low)
+#       return false
+#     elsif value == :correct
+#       return true
+#     end
+#   end
+
+# end
+
+
+class GuessingGame
 
   def initialize(answer)
     @answer = answer
@@ -60,7 +89,6 @@ class GuessingGame
   end
 
 end
-
 
 
 
