@@ -8,7 +8,7 @@
 
 def serving_size_calc(item_to_make, num_of_ingredients)
   cookbook = {"cookie" => 1, "cake" =>  5, "pie" => 7}
-  cookbook.include?(item_to_make)
+
   raise ArgumentError.new("#{item_to_make} is not a valid input") if cookbook.include?(item_to_make) == false
 
   serving_size = cookbook[item_to_make]
@@ -30,4 +30,11 @@ p serving_size_calc("THIS IS AN ERROR", 5)
 
 #  Reflection
 
-
+#W#### What did you learn about making code readable by working on this challenge?
+# We learned that making many explicit comments is a solid way to grasp what operation is taking place in a chunk of code. As well as the benefit of really explicit variable names, like no_leftovers.
+##### Did you learn any new methods? What did you learn about them?
+# I learned include(). It was really effective in this challenge in particular.
+##### What did you learn about accessing data in hashes?
+# I learned that there are ways to search through the values and the keys of a hash, in order to link pairs of information. That way one does not have to iterate through the pairs of a hash in order to associate a particular bit of information with a hash key.
+##### What concepts were solidified when working through this challenge?
+# My partner was the one who wrote line 12, and I had never made an effort to get acquanted with that way of writing "if statements." It has taken me looking at it and comparing it to the old code to make me appreciate it, and realize that it's performing a very simple operation, but one would have written in five lines or so otherwise.
