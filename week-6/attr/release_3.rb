@@ -3,7 +3,7 @@
 class Profile
 
   attr_reader :age
-  attr_writer :age
+  #attr_writer :age
 
   def initialize
     @age = 27
