@@ -30,37 +30,6 @@
 
 # Initial Solution
 
-# class GuessingGame
-
-
-#   def initialize(answer)
-#     @answer = answer
-#   end
-
-#   def guess(guess)
-#     if guess < @answer
-#       return :low
-#     elsif guess > @answer
-#       return :high
-#       #return value
-#     else # guess == @answer
-#       return :correct
-#       #return value
-#     end
-#   end
-
-
-#   def solved?
-#     if guess(guess) == (:high || :low)
-#       return false
-#     elsif value == :correct
-#       return true
-#     end
-#   end
-
-# end
-
-
 class GuessingGame
 
   def initialize(answer)
@@ -69,71 +38,73 @@ class GuessingGame
 
   def guess(guess)
     if guess < @answer
-      return :low
+      @guess = :low
     elsif guess > @answer
-      return :high
+      @guess = :high
       #return value
     else # guess == @answer
-      return :correct
+      @guess = :correct
       #return value
     end
   end
 
-
-  def solved?
-    if guess(guess) == (:high || :low)
-      return false
-    elsif value == :correct
+   def solved?
+    if @guess == :correct
       return true
+    else
+      return false
     end
   end
 
 end
 
+new_game = GuessingGame.new(14)
+puts new_game.guess(5).inspect
+puts new_game.solved?
+puts new_game.guess(79).inspect
+puts new_game.solved?
+puts new_game.guess(1).inspect
+puts new_game.solved?
+
+puts new_game.guess(14).inspect
+puts new_game.solved?
+puts new_game.guess(6).inspect
+puts new_game.solved?
+puts new_game.guess(98).inspect
+puts new_game.solved?
 
 
 # Refactored Solution
 
+class GuessingGame
 
-# class GuessingGame
+  def initialize(answer)
+    @answer = answer
+  end
 
-#   def initialize(answer)
-#     @answer = answer
+  def guess(guesss)
+    if guess < @answer
+      @guess = :low
+    elsif guess > @answer
+      @guess = :high
+    else
+      @guess = :correct
+    end
+  end
 
-#   end
+   def solved?
+    if @guess == :correct
+      return true
+    else
+      return false
+    end
+  end
 
-#   def run_game
-#     MakeGuess.new
-#   end
+  # def solved?
+  #     @guess == :correct ? return true : return false
+  #   end
 
-#   end
+end
 
-# end
-
-# class MakeGuess
-#     def initialize(guess, answer)
-#       @guess = guess
-#       @answer = answer
-#     end
-
-#     def guess
-#       if @guess < @answer
-#         return :low
-#       elsif @guess > @answer
-#         return :high
-#       else # guess == @answer
-#         return :correct
-#       end
-#     end
-
-#     def solved?
-#       if current_guess  == ( :high || :low)
-#         return false
-#       else
-#         return true
-#       end
-#     end
-
-# end
 
 # Reflection
