@@ -30,6 +30,52 @@
 
 # Initial Solution
 
+# class GuessingGame
+
+#   def initialize(answer)
+#     @answer = answer
+#   end
+
+#   def guess(guess)
+#     if guess < @answer
+#       @guess = :low
+#     elsif guess > @answer
+#       @guess = :high
+#       #return value
+#     else # guess == @answer
+#       @guess = :correct
+#       #return value
+#     end
+#   end
+
+#    def solved?
+#     if @guess == :correct
+#       return true
+#     else
+#       return false
+#     end
+#   end
+
+# end
+
+# new_game = GuessingGame.new(14)
+# puts new_game.guess(5).inspect
+# puts new_game.solved?
+# puts new_game.guess(79).inspect
+# puts new_game.solved?
+# puts new_game.guess(1).inspect
+# puts new_game.solved?
+
+# puts new_game.guess(14).inspect
+# puts new_game.solved?
+# puts new_game.guess(6).inspect
+# puts new_game.solved?
+# puts new_game.guess(98).inspect
+# puts new_game.solved?
+
+
+# Refactored Solution
+
 class GuessingGame
 
   def initialize(answer)
@@ -41,68 +87,14 @@ class GuessingGame
       @guess = :low
     elsif guess > @answer
       @guess = :high
-      #return value
-    else # guess == @answer
-      @guess = :correct
-      #return value
-    end
-  end
-
-   def solved?
-    if @guess == :correct
-      return true
-    else
-      return false
-    end
-  end
-
-end
-
-new_game = GuessingGame.new(14)
-puts new_game.guess(5).inspect
-puts new_game.solved?
-puts new_game.guess(79).inspect
-puts new_game.solved?
-puts new_game.guess(1).inspect
-puts new_game.solved?
-
-puts new_game.guess(14).inspect
-puts new_game.solved?
-puts new_game.guess(6).inspect
-puts new_game.solved?
-puts new_game.guess(98).inspect
-puts new_game.solved?
-
-
-# Refactored Solution
-
-class GuessingGame
-
-  def initialize(answer)
-    @answer = answer
-  end
-
-  def guess(guesss)
-    if guess < @answer
-      @guess = :low
-    elsif guess > @answer
-      @guess = :high
     else
       @guess = :correct
     end
   end
 
    def solved?
-    if @guess == :correct
-      return true
-    else
-      return false
-    end
+    @guess == :correct ? true : false
   end
-
-  # def solved?
-  #     @guess == :correct ? return true : return false
-  #   end
 
 end
 
