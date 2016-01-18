@@ -1,7 +1,7 @@
 
 # A Nested Array to Model a Bingo Board SOLO CHALLENGE
 
-# I spent [3] hours on this challenge.
+# I spent [3.5] hours on this challenge.
 
 
 ###################################################################################
@@ -85,34 +85,7 @@
 #       end
 #     end
 #   end
-
-# #############
-#   #NOTE FROM E.B. I am leaving the following block here for my personal debugging purposes
-#   #   def input_check_column(letter, number)
-#   #   @letter = letter
-#   #   @number = number
-#   #   bingo_hash = {"B" => 0, "I" => 1, "N" => 2, "G" => 3, "O" => 4}
-#   #   @word_place = bingo_hash[@letter]
-#   #   row_counter = 0
-#   #   @bingo_board.each do |row|
-#   #     if row[@word_place] == @number
-#   #       p "It's a match."
-#   #       #return true
-#   #       @row_place = row_counter
-#   #       #puts "#{@row_place} is the row that has the value"
-#   #       @bingo_board[@row_place][@word_place] = "X"
-#   #       break
-#   #     else
-#   #       #p "Not a match."
-#   #       #return false
-#   #       row_counter += 1
-#   #       next
-#   #     end
-#   #   puts "Not a match"
-#   #   end
-#   # end
-#   #############
-
+#
 #   def display_column
 #     @bingo_board.each do |row|
 #       puts row[@word_place]
@@ -171,7 +144,7 @@ class BingoBoard
     @bingo_board.each do |row|
       if row[@letter_index] == @number
         @bingo_board[row_counter][@letter_index] = "X"
-        #if I wanted to write a method to display a row, I would make row_place an instance variable
+
       else
         row_counter += 1
       end
@@ -185,10 +158,11 @@ class BingoBoard
   def print_board
     puts "B\tI\tN\tG\tO"
     @bingo_board.each do |row|
-      row.each{|num| print "#{num}\t"}
+      row.each{|item| print "#{item}\t"}
       puts
     end
   end
+
 end
 
 class NewCall
@@ -218,4 +192,7 @@ new_game.print_board
 
 #Reflection
 
-#
+# Writing pseudocode wasn't that difficult, because I purposefully wrote each step as the simplest possible operation. I try to write them as complete and syntactic English sentences and use no Ruby words, and I also try to be specific about which data structure/variable/etc are being used/operated upon. I am happy with my personal pseudocoding style. I decided to make the letter, board, number, x position all instance variables, because I would invoke them again and again. My original code stored the y position in an instance variable, but I decided when i refactored that it didn't make sense to keep which row the answer is in stored in an instance variale (that can be accessed throughout the class) if it is only oned in one method. If, say, I had to write a method that only printed a row, then I would have made the row variable an instance variable.
+# Using a class allowed one to use the great many instance variables being returned or passed around in a robust way. I didn't have to save them as very detailed variable names, or return arrays of information, since they were linked as one. And putting the code that generates a new letter and number in it's own class allowed me to create a complete random call that couldn't be accessed and biased when interacting with the head. Having access to the scop of instance variables made a huge difference to my ability to do the code cleanly, otherwise i may have been forced to output arrays and take on complicated code.
+# I accessed values in the nested array through iteration to find the desired results, saving the results as variables, and then double-indexing. (The position in the row/letter index was analogous to an x-coordinate to me. And the row number and outermost index, was the y-coordinate of the object in question.) I really tried to use inject() for this, but I wan't able to find a use that justified it. Inject is widely used to add all numbers in an array, it performs a block of code once for every item on an array and stores the result within itself.
+# I had fun using index() and sample() during this challenge, I had not heard of either method. The best change I made, I think, was making combining 2 classes into one and creating one class that generated new bingo calls. Having 2 took up a lot more lines for no gains in understanding or clarity or us.
