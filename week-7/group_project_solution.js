@@ -27,12 +27,12 @@
 // determine how many numbers are on the list
 // IF there are an odd number of numbersin the list
 //    UNTIL there are only two numbers remaining in the list
-//        remove the first AND last numbers from the list
+//        change the list by removing the first AND last numbers from the list
 //    add together the remaining two numbers
 //    divide the sum by two
 //    return the result to the user
 // ELSE IF there are an even number of numbers in the list
 //    UNTIL there is only one number remaining in the list
-//        remove the first AND last numbers from the list
+//        change the list by removing the first AND last numbers from the list
 //    return the single remaining number on the list to the user
 //OUTPUT - a single number
