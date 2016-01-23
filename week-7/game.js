@@ -83,9 +83,9 @@ var player = {
 var cardinalDirections = {N: [0, 1], S: [0, -1], E: [1, 0], W: [-1, 0]};
 
 var monster = {
-  posX:Math.floor(Math.random()*30),
-  posY:Math.floor(Math.random()*30),
-  bearing: cardinalDirections[Math.floor(Math.random()*4)]
+  posX: (Math.floor(Math.random()*30)),
+  posY: (Math.floor(Math.random()*30)),
+  bearing: (cardinalDirections[Math.floor(Math.random()*4)])
 };
 
 // declare putative X and Y positions for error checking?
@@ -93,6 +93,12 @@ var monster = {
 
 //////////////////////
 //FUNCTIONS
+
+// two big functions, called playerMoves and monster moves?
+// would nest the player moves forward functions in each
+
+// does it see you and do you win are other functions
+
 
 function doesItSeeYou(playerX, playerY, monsterX, monsterY) {
   if (playerX === monsterX) {
@@ -104,14 +110,11 @@ function doesItSeeYou(playerX, playerY, monsterX, monsterY) {
   }
 };
 
-// is it really supposed to be var function()?
-function monsterTurns(monster.posX, monster.posY, monster.bearing) {
-  var cardinalDirections = [W, N, E, S, W];
-    // match the monster's bearing to the key
-    // take the index number of the key in question
-    //
-    }
-};
+// function monsterTurns(monsterX, monsterY, bearing) {
+//   var cardinalDirections = [W, N, E, S, W];
+//   var indexDirection = cardinalDirections.indexOf(monster.bearing)
+//     }
+// };
 
 function isMoveValid(){};
 
@@ -141,15 +144,20 @@ function monsterMoves(monsterX, monsterY, bearing) {
 
 //////////
 
-if (player.sanity === false) {
+if (sanity === false) {
   console.log("Itte just saw you! Lol you lose")
 };
 
-if (player.hasAmulet=== true){
+if (hasAmulet=== true){
   console.log("You have the amulet and you made it out! Congrats")
 };
 
-if (player.sanity && playerMoves){
+function playGame(){};
+
+var playerMoves = true;
+
+
+if (sanity && playerMoves){
   var playerMove = prompt("In which cardinal would you like to move?");
   var putativeX = playerX;
   var putativeY = playerY;
@@ -184,13 +192,14 @@ if (player.sanity && playerMoves){
 };
 }
 
+
 // when the player isn't moving, the monster is
-if (playerMoves ===  false) {
+if (playerMoves === false) {
   var nextTurn = null
   // monster turns if the randomized number is less than 0.5
-  if (Math.random > 0.5) {
+  if ((Math.random()) > 0.5) {
     // decides if monster is turning left or right
-    if Math.random < 0.5 {
+    if ((Math.random()) < 0.5) {
       nextTurn == "L"
       //
     } else {
