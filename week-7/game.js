@@ -64,29 +64,132 @@
 // Initial Code
 
 
-var player = {
-  posX: 0,
-  posY: 0,
-  sanity: true,
-  hasAmulet: false,
-};
-
-// probably don't need this
-// var dungeon = {
-//   northWall: 30,
-//   southWall: 0,
-//   eastWall: 30,
-//   westWall: 0
+// var player = {
+//   posX: 0,
+//   posY: 0,
+//   sanity: true,
+//   hasAmulet: false,
 // };
 
-// move this around?
-var cardinalDirections = {N: [0, 1], S: [0, -1], E: [1, 0], W: [-1, 0]};
 
-var monster = {
-  posX: (Math.floor(Math.random()*30)),
-  posY: (Math.floor(Math.random()*30)),
-  bearing: (cardinalDirections[Math.floor(Math.random()*4)])
+// var cardinalDirectionsObject = {N: [0, 1], S: [0, -1], E: [1, 0], W: [-1, 0]};
+
+
+
+// var monster = {
+//   posX: (Math.floor(Math.random()*30)),
+//   posY: (Math.floor(Math.random()*30)),
+//   bearing: (cardinalDirections[Math.floor(Math.random()*4)])
+// };
+
+function playGame(){
+
+  var player = {
+    sanity: true,
+    wonGame: false
+  }
+
+  var playerX = 0
+  var playerY = 0
+
+  var monsterX =
+  var monsterY =
+  var bearing =
+
+  var cardinalDirections = ["N", "E", "S", "W"]
+
+  function playerGoes(playerX, playerY) {
+    // takes player's X and Y as array
+    // prompts player for a new move
+    // outputs new X and Y
+    return [playerX, playerY];
+  }
+
+  function monsterGoes(monsterX, monsterY, bearing) {
+    // takes monster position and bearing
+    //random turn or move forward
+    var whichOne = (Math.random())
+    // monster turns
+    if (whichOne > 0.5) {
+      //calculate turn based on bearing
+      // output X and Y and bearing
+    // monster moves forward
+    } else {
+      if (bearing == "N") {
+        monsterY += 1;
+      } else if (bearing == "S") {
+        monsterY -= 1;
+      } else if (bearing == "E") {
+        monsterX += 1;
+      } else {
+        monsterX -= 1;
+      }
+    return monsterX, monsterY, bearing
+  }
+
+  function printCoordinates(playerX, playerY, monsterX, monsterY){
+    // takes player and monster coordinates
+    // determines how far the player is from the monster
+    // determine how far the player is from the amulet
+    // print results to console
+    console.log();
+  }
+
+  function monsterSeesYou(playerX, playerY, monsterX, monsterY, bearing){
+     if (playerX === monsterX && bearing === ("N" || "S")) {
+    if (playerY > monsterY && bearing === "N") {
+        return true;
+    } else if (playerY < monsterY && bearing === "S") {
+        return true;
+    } else {
+      return false;
+    }
+  } else if (playerY === monsterY && bearing === ("E" || "W") ) {
+    if (playerX > monsterX && bearing === "E") {
+        return true;
+    } else if (playerX < monsterX && bearing === "W") {
+        return true;
+    } else {
+      return false;
+    }
+  } else {
+    return false;
+  }
 };
+  }
+
+  while (sanity === true && winning === false) {
+    // player takes a turn
+    [playerX, playerY] = playerGoes[playerX, playerY];
+    // monster takes a turn
+    [monsterX, monsterY, bearing] = monsterGoes[monsterX, monsterY, bearing];
+    // check if player has won game
+    if (playerX === 30 && playerY === 30) {
+      player.wonGame = true
+      break
+    }
+        // check if the monster sees the player
+    if (monsterSeesYou(playerX, playerY, monsterX, monsterY, bearing)) {
+      player.sanity = false;
+      break;
+    } else {
+      continue;
+    }
+    printCoordinates(playerX, playerY, monsterX, monsterY);
+  }
+
+  if (player.sanity === false) {
+
+  };
+
+  if (player.wonGame === true) {
+
+  };
+
+};
+
+playGame();
+
 
 // declare putative X and Y positions for error checking?
 
@@ -100,15 +203,37 @@ var monster = {
 // does it see you and do you win are other functions
 
 
-function doesItSeeYou(playerX, playerY, monsterX, monsterY) {
-  if (playerX === monsterX) {
-    return true;
-  } else if (playerY === monsterY){
-    return true;
-  } else {
-    return false;
-  }
-};
+// function doesItSeeYou(playerX, playerY, monsterX, monsterY, bearing) {
+//   if (playerX === monsterX && bearing === ("N" || "S")) {
+//     if (playerY > monsterY && bearing === "N") {
+//         return true;
+//     } else if (playerY < monsterY && bearing === "S") {
+//         return true;
+//     } else {
+//       return false;
+//     }
+//   } else if (playerY === monsterY && bearing === ("E" || "W") ) {
+//     if (playerX > monsterX && bearing === "E") {
+//         return true;
+//     } else if (playerX < monsterX && bearing === "W") {
+//         return true;
+//     } else {
+//       return false;
+//     }
+//   } else {
+//     return false;
+//   }
+// };
+
+// function doesItSeeYouBETA(playerX, playerY, monsterX, monsterY, bearing) {
+//   if (playerX === monsterX) {
+//     return true;
+//   } else if (playerY === monsterY){
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
 
 // function monsterTurns(monsterX, monsterY, bearing) {
 //   var cardinalDirections = [W, N, E, S, W];
@@ -116,32 +241,23 @@ function doesItSeeYou(playerX, playerY, monsterX, monsterY) {
 //     }
 // };
 
-function isMoveValid(){};
 
 function monsterRules(){
 
   function monsterMoves(monsterX, monsterY, bearing) {
-  var putativeX = monsterX;
-  var putativeY = monsterX;
-  // when to check that a player's move is valid?
   if (bearing == "N") {
-    putativeY += 1;
+    monsterY += 1;
   }
   else if (bearing == "S") {
-    putativeY -= 1;
+    monsterY -= 1;
   }
   else if (bearing == "E") {
-    putativeX += 1;
+    monsterX += 1;
   }
   else{
-    putativeX -= 1;
+    monsterX -= 1;
   }
-  if (putativeX > 30 || putativeY > 30) {
-    playerMoves = true;
-  } else {
-    monsterX = putativeX;
-    monsterX = putativeY;
-    return monster
+
 };
 
 // when the player isn't moving, the monster is
@@ -165,11 +281,14 @@ if (playerMoves === false) {
 }
 
 function playerFunctions() {
+
+
   if (sanity && playerMoves){
   var playerMove = prompt("In which cardinal would you like to move?");
   var putativeX = playerX;
   var putativeY = playerY;
   // when to check that a player's move is valid?
+
   if ("N" in playerMove) {
     putativeY += 1
   }
@@ -196,8 +315,9 @@ function playerFunctions() {
   }
   // can I get it to output whether it's one direction in either way
   console.log("Itte is now " + (monsterX - playerX) + "places East or West from you and " (monsterY - playerY) + "places North or South from you.");
-  console.log("You are now "+ (30 - playerX) + "places East or West from the amulet and " + (30 - playerY)+ "places north or South from the amulet.")
+  console.log("You are now "+ (30 - playerX) + "places  West from the amulet and " + (30 - playerY)+ "places South of the amulet.")
   playerMoves = false;
+
 };
 
 
@@ -212,7 +332,6 @@ if (hasAmulet=== true){
 };
 
 function playGame(){
-
   var playerMoves = true;
 };
 
