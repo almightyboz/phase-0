@@ -118,7 +118,9 @@ function doesItSeeYou(playerX, playerY, monsterX, monsterY) {
 
 function isMoveValid(){};
 
-function monsterMoves(monsterX, monsterY, bearing) {
+function monsterRules(){
+
+  function monsterMoves(monsterX, monsterY, bearing) {
   var putativeX = monsterX;
   var putativeY = monsterX;
   // when to check that a player's move is valid?
@@ -142,22 +144,28 @@ function monsterMoves(monsterX, monsterY, bearing) {
     return monster
 };
 
-//////////
+// when the player isn't moving, the monster is
+if (playerMoves === false) {
+  var nextTurn = null
+  // monster turns if the randomized number is less than 0.5
+  if ((Math.random()) > 0.5) {
+    // decides if monster is turning left or right
+    if ((Math.random()) < 0.5) {
+      nextTurn == "L"
+      // Based on bearing, where is it going?
+    } else {
+      nextTurn == "R"
+      // Based on bearing, where is it going?
+    }
+    // monster moves forward if the randomized number is less than 0.5
+  } else {
+    monsterMoves(monsterX, monsterY, bearing);
+  }
+  return monster
+}
 
-if (sanity === false) {
-  console.log("Itte just saw you! Lol you lose")
-};
-
-if (hasAmulet=== true){
-  console.log("You have the amulet and you made it out! Congrats")
-};
-
-function playGame(){};
-
-var playerMoves = true;
-
-
-if (sanity && playerMoves){
+function playerFunctions() {
+  if (sanity && playerMoves){
   var playerMove = prompt("In which cardinal would you like to move?");
   var putativeX = playerX;
   var putativeY = playerY;
@@ -187,31 +195,29 @@ if (sanity && playerMoves){
     sanity = false
   }
   // can I get it to output whether it's one direction in either way
-  console.log("Itte is now " + (monsterX - playerX) + "East or West from you and " (monsterY - playerY) + "North or South from you.");
+  console.log("Itte is now " + (monsterX - playerX) + "places East or West from you and " (monsterY - playerY) + "places North or South from you.");
+  console.log("You are now "+ (30 - playerX) + "places East or West from the amulet and " + (30 - playerY)+ "places north or South from the amulet.")
   playerMoves = false;
 };
-}
 
 
-// when the player isn't moving, the monster is
-if (playerMoves === false) {
-  var nextTurn = null
-  // monster turns if the randomized number is less than 0.5
-  if ((Math.random()) > 0.5) {
-    // decides if monster is turning left or right
-    if ((Math.random()) < 0.5) {
-      nextTurn == "L"
-      //
-    } else {
-      nextTurn == "R"
-      //
-    }
-    // monster moves forward if the randomized number is less than 0.5
-  } else {
-    monsterMoves(monsterX, monsterY, bearing);
-  }
-  return monster
+//////////
+
+if (sanity === false) {
+  console.log("Itte just saw you! Lol you lose")
 };
+
+if (hasAmulet=== true){
+  console.log("You have the amulet and you made it out! Congrats")
+};
+
+function playGame(){
+
+  var playerMoves = true;
+};
+
+
+
 ////////////////////////////
 //SANDBOX FOR CODE I'M TESTING
 
