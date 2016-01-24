@@ -1,7 +1,7 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge  with: Charlie Bliss.
+# We spent 1.5 hours together, 0.5 by myself, apart, on this challenge.
 
 # EXPLANATION OF require_relative
 #
@@ -81,6 +81,58 @@ california.virus_effects
 
 alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
 alaska.virus_effects
+
+#==================================================================================
+class VirusPredictor
+
+#   set the values of the instance variables state, population and pop density
+
+  def initialize(state_of_origin, population_density, population)
+    @state = state_of_origin
+    @population = population
+    @population_density = population_density
+  end
+
+
+  #run the two other methods, predicted_deaths and speed_of_spread on these previously defined isntance variables
+  def virus_effects
+    puts "#{@state} will lose #{predicted_deaths} people in this outbreak and will spread across the state in #{speed_of_spread} months.\n\n"
+  end
+
+  private
+
+
+  def predicted_deaths#(population_density, population, state)
+    # predicted deaths is solely based on population density
+    return case @population_density
+      when 0..50 then (@population * 0.05).floor
+      when 150..200 then (@population * 0.3).floor
+      when 100..150 then (@population * 0.2).floor
+      when 50..100 then (@population * 0.1).floor
+      else (@population *0.4).floor
+    end
+  end
+
+
+  def speed_of_spread#(population_density, state) #in months
+    # We are still perfecting our formula here. The speed is also affected
+    # by additional factors we haven't added into this functionality.
+    return case @population_density
+      when 0..50 then 2.5
+      when 50..100 then 2
+      when 100..150 then 1.5
+      when 150..200 then 1
+      else 0.5
+    end
+  end
+
+end
+
+
+
+STATE_DATA.each do |state, data|
+  VirusPredictor.new(state, data[:population_density], data[:population]).virus_effects
+end
 
 
 #=======================================================================
