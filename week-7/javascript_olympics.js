@@ -2,7 +2,7 @@
 
 // I paired with: Hagai Zwick on this challenge.
 
-// This challenge took me [#] hours.
+// This challenge took me 3 hours.
 
 
 
@@ -83,6 +83,21 @@ console.log(findEven(myArray))
 // "We built this city"
 
 
+function Athlete(name, age, sport, quote) {
+  this.name = name;
+  this.age = age;
+  this.sport = sport;
+  this.quote = quote
+}
+
+
+var michaelPhelps = new Athlete("Michael Phelps", 29, "swimming", "It's medicinal I swear!")
+
+console.log(michaelPhelps.constructor === Athlete)
+
+console.log(michaelPhelps.name + " " + michaelPhelps.sport + " " + michaelPhelps.quote)
 
 
 // Reflection
+// I solidified how to build functional for loops in JS and when to use indexs instead of counters within the for loops.
+// Constructor functions are a different way of writing JS objects that allow us to easily attach methods as properties to functions. They also make swapping out values of properties fairly easy. They are similar to Ruby classes in that they need to be instantiated with the name of the instance and the variables that make up the information that makes the instance unique. They are different because they don't inherit from each other the way that Ruby classes do, only from prototypes. (Which I am still building my knowledge of.)
