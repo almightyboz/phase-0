@@ -2,6 +2,7 @@
 
 // This is a solo challenge
 
+///////////////////////////////////////////////////////////////////////////////
 // Your mission description: Collect the amulet, avoid the monster
 // Overall mission: Move step by step on the grid from the SW corner of the room diagonally to the amulet on the NE corner of the room. Avoid monster's gaze.
 // Goals: Collect amulet, avoid insanity.
@@ -10,7 +11,9 @@
 //        monster -> Always facing a cardinal direction (ie N,S,E,W). Starts game on random position with random bearing. Makes random moves throughout the game. (It only takes one move at a time. Turning is one move. Moving in the direction of it's bearing is one move.) If the player strays in front of the creature's eyepath (i.e. monster's bearing is "facing" the player and it has an unimpeded eyepath towards the player), the player is rendered insane by the monster and loses the game.
 // Objects: player(position, sanity, hasAmulet), monster(position, bearing), room(dimensions)
 // Functions: monsterMoves, checkPlayerMove, moveSouth
-////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////////////////
 // Pseudocode
 //input - series of instructions on how the player should move based on the position of the monster.
 
@@ -60,10 +63,8 @@
 
 //"You hear a sound, and turn. You can see It, and you realize that It sees you. Terror grips your person. For a moment, you see something like an upside-down umbrella made of eyes, with a giant,gaping maw. Then, where It was hovering, there is only a child, small and scared looking. You rush forward to take its hand. Immediately your hand explodes in pain, while you hear a laughter that echoes in the space. The walls shift outward, turn bright pink, and start to alternately ooze human entrails and belch black smoke. You look at the stump where your hand once was. First a dog's paw protrudes from the stump. Then a hairdryer nozzle. Then a slimy tentacle. And so on and so forth. You are suddenly aware of wisdoms so profound that you want to weep from their truth, and of horrible events so disgusting that you"
 
-////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
 // Initial Code
-
-
 
 var cardinalDirections = ["N", "E", "S", "W"];
 
@@ -329,15 +330,17 @@ function playGame() {
 
 playGame();
 
-\
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 // Reflection
 //
+// For reference, I'm aware that I could have collapsed the two functions for moving forward into one. I was too tired to accomplish that on top of my other responsibilities this week. I also could have worked harder to use more functions in objects, but I was late to that knowlege, so I didn't want to mess with my code. As a result, I think my JavaScript looks very Ruby-y. If I have time, I think I'll take this to one of the guides this week and see what I can do to refactor it to better fit JavaScript.
+
+//I especially don't like how I had to return the answers as an array and then indexed apart that array. I have a feeling that I could have accomplished that using properties, but I wasn't able to give it the time it merited. It makes more sense to store (and change) the values as properties of the same object, as they are all related. I could have instantiated a new method of directions every single time I or the monster moved, which would have probably cut down on the length of my program. My method works, and well, but it is a blunt tool and needs a rewrite before I put it on my "Projects" page. Although I do want it on my projects page on my website, because I like my idea and I think the execution turned out well.
 //
+// A difficult part was getting the turning algorithm just right. To be honest, I sunk far more time than I needed to, the versimilitude of having the monster only move right or left wasn't as needed for the final project. Honestly, I really really liked my concept and my game, and the hardest thing for me this week has been tearing myself away from the game to work on other challenges. I was so happy when I got the code finally working.
 //
+// indexOf and includes were the only new functions I found on the JS docs. I used a lot of very basic functions for this, to my own despair
 //
-//
-//
+//NOTE TO REVIEWER. If you're curious, I based the monster's attack on a Dungeons & Dragons monster called a Beholder. D&D's beholders are scary floating evil sentient balls of tentacles, eyes and protoplasm. If you are in their immediate field of view, they cause you all sorts of crazy damage. They are also smarter than my randomly moving and turning monster. And they are also a licensed intelletual property, or so I understand, so I didn't use their name or an exact description.
 //
 //
