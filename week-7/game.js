@@ -10,7 +10,7 @@
 //        monster -> Always facing a cardinal direction (ie N,S,E,W). Starts game on random position with random bearing. Makes random moves throughout the game. (It only takes one move at a time. Turning is one move. Moving in the direction of it's bearing is one move.) If the player strays in front of the creature's eyepath (i.e. monster's bearing is "facing" the player and it has an unimpeded eyepath towards the player), the player is rendered insane by the monster and loses the game.
 // Objects: player(position, sanity, hasAmulet), monster(position, bearing), room(dimensions)
 // Functions: monsterMoves, checkPlayerMove, moveSouth
-///////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////
 // Pseudocode
 //input - series of instructions on how the player should move based on the position of the monster.
 
@@ -55,32 +55,13 @@
 //        monster makes another random move
 
 //output - decision on whether the player has collected the amulet and avoided the monster
-// Finally, you reach a heavy iron door. You pull it open. You find yourself looking out from the corner of a large, dimly lit room. The four walls are marked N, S, E, and W. On the floor is a gleaming grid pattern. Floating above one grid square is a pulsating, roughly spherical, purple-red mass. It's edges are indistinct, it seems to grow bigger and smaller by turns the longer you look at it. You are vaguely aware of tentacles. YOu consult your scroll
-//Of it's face, I cannot speak. The face of the monster can only be seen from directly in front of it.
+// Finally, you reach a heavy iron door. You pull it open. You find yourself looking out from the corner of a large, dimly lit room. The four walls are marked N, S, E, and W. On the floor is a gleaming grid pattern. Floating above one grid square is a pulsating, roughly spherical, purple-red mass. It's edges are indistinct, it seems to grow bigger and smaller by turns the longer you look at it. You are vaguely aware of tentacles. You consult your scroll
+//The beast lurches. It may turn, and you will walk, it may move, and you will walk. Of it's face, I cannot speak. It's face is shrouded, it is aThose whom itte beholds have all turned mad,
 
-//"You hear a sound, and turn. You can see It, and you realize that It sees you. Terror grips your person. For a moment, you see something like an upside-down umbrella made of eyes, with a giant,gaping maw. Then, where It was hovering, there is only a child, small and scared looking. You rush forward to take its hand. Immediately your hand explodes in pain, while you hear a laughter that echoes in the space. The walls shift outward, turn bright pink, and start to alternately ooze human entrails and belch black smoke. You look at the stump where your hand once was. First a dog's paw protrudes from the stump. Then a hairdryer nozzle. Then a slimy tentacle. And so on and so forth. You are suddenly aware of wisdoms so profound that you want to weep from their truth, and of horrible events so disgusting that you
+//"You hear a sound, and turn. You can see It, and you realize that It sees you. Terror grips your person. For a moment, you see something like an upside-down umbrella made of eyes, with a giant,gaping maw. Then, where It was hovering, there is only a child, small and scared looking. You rush forward to take its hand. Immediately your hand explodes in pain, while you hear a laughter that echoes in the space. The walls shift outward, turn bright pink, and start to alternately ooze human entrails and belch black smoke. You look at the stump where your hand once was. First a dog's paw protrudes from the stump. Then a hairdryer nozzle. Then a slimy tentacle. And so on and so forth. You are suddenly aware of wisdoms so profound that you want to weep from their truth, and of horrible events so disgusting that you"
 
-///////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////
 // Initial Code
-
-
-// var player = {
-//   posX: 0,
-//   posY: 0,
-//   sanity: true,
-//   hasAmulet: false,
-// };
-
-
-// var cardinalDirectionsObject = {N: [0, 1], S: [0, -1], E: [1, 0], W: [-1, 0]};
-
-
-
-// var monster = {
-//   posX: (Math.floor(Math.random()*30)),
-//   posY: (Math.floor(Math.random()*30)),
-//   bearing: (cardinalDirections[Math.floor(Math.random()*4)])
-// };
 
 
 
@@ -94,8 +75,8 @@ var player = {
 var playerX = 0;
 var playerY = 0;
 
-var monsterX = Math.floor(Math.random()*30);
-var monsterY = (Math.floor(Math.random()*30));
+var monsterX = Math.floor(Math.random()*10);
+var monsterY = (Math.floor(Math.random()*10));
 var bearing = cardinalDirections[Math.floor(Math.random()*4)];
 
 function playGame() {
@@ -127,7 +108,7 @@ function playGame() {
         //monster turns
       if (whichOne < 50) {
           var position = cardinalDirections.indexOf(bearing);
-          if (whichOne > 25) {
+          if (whichOne < 25) {
             position = ((position + 1)%4);
           } else {
             position = (position - 1)%4;
@@ -147,49 +128,18 @@ function playGame() {
     return [monsterX, monsterY, bearing];
   }
 
-      // function monsterGoes(monsterX, monsterY, bearing) {
-      // // takes monster position and bearing
-      // //random turn or move forward
-      // var whichOne = (Math.random() * 100)
-      //     // monster turns
-      //     //calculate turn based on bearing
-      //     // output X and Y and bearing
-      //   //monster turns
-      // if (whichOne > 50) {
-      //     var position = cardinalDirections.indexOf(bearing);
-      //     // turn right
-      //     if (whichOne > 25) {
-      //       position = ((position + 1)%4);
-      //     // turn left
-      //     } else {
-      //       position = (position - 1)%4
-      //     }
-      //     bearing = cardinalDirections[position];
-      //     // monster moves forward
-      // } else {
-      //     if (bearing === "N") {
-      //         monsterY += 1;
-      //     } else if (bearing === "S") {
-      //         monsterY -= 1;
-      //     } else if (bearing === "E") {
-      //         monsterX += 1;
-      //     } else {
-      //         monsterX -= 1;
-      //     }
-      //     return [monsterX, monsterY, bearing];
-      // }
 
-  //DETERMINE WHICH DIRECTION I AM FROM MONSTER?
-  function printCoordinates(playerX, playerY, monsterX, monsterY) {
-      // takes player and monster coordinates
-      // determines how far the player is from the monster
-      // determine how far the player is from the amulet
-      // print results to console
-      // print how far the player is from the monster
-      console.log(["Itte is now", (monsterX - playerX), "places East or West from you and", (monsterY - playerY), "places North or South from you."].join(" "));
-      // print how far the player is from the amulet
-      console.log("You are now " + (30 - playerX) + " places West from the amulet and " + (30 - playerY) + " places South of the amulet.");
-  }
+  // //DETERMINE WHICH DIRECTION I AM FROM MONSTER?
+  // function printCoordinates(playerX, playerY, monsterX, monsterY) {
+  //     // takes player and monster coordinates
+  //     // determines how far the player is from the monster
+  //     // determine how far the player is from the amulet
+  //     // print results to console
+  //     // print how far the player is from the monster
+  //     console.log(["Itte is now", (monsterX - playerX), "places East or West from you and", (monsterY - playerY), "places North or South from you."].join(" "));
+  //     // print how far the player is from the amulet
+  //     console.log("You are now " + (30 - playerX) + " places West from the amulet and " + (30 - playerY) + " places South of the amulet.");
+  // }
 
   function monsterSeesYou(playerX, playerY, monsterX, monsterY, bearing) {
       // takes all things, returns boolean
@@ -217,15 +167,18 @@ function playGame() {
   while (player.sanity === true && player.wonGame === false) {
       // player takes a turn
       var playerArray = playerGoes(playerX, playerY);
+      //alert(playerArray)
       // monster takes a turn
       playerX = playerArray[0];
       playerY = playerArray[1];
       var monsterArray = monsterGoes(monsterX, monsterY, bearing);
+      //alert(monsterArray)
       monsterX = monsterArray[0];
       monsterY = monsterArray[1];
       bearing = monsterArray[2];
+      alert(["You are standing on tile", playerX, playerY, ". The monster is on tile", monsterX, monsterY, "facing the wall marked", bearing,"."].join(" "));
       // check if player has won game
-      if (playerX === 30 && playerY === 30) {
+      if (playerX === 10 && playerY === 10) {
           player.wonGame = true;
           break;
       }
@@ -236,15 +189,14 @@ function playGame() {
       } else {
           continue;
       }
-      printCoordinates(playerX, playerY, monsterX, monsterY);
-  };
+  }
 
   if (player.sanity === false) {
     console.log("lol you lose");
   };
 
   if (player.wonGame === true) {
-    console.log("You win great job.");
+    console.log("You win! great job.");
   };
 
 }
@@ -253,126 +205,133 @@ function playGame() {
 playGame();
 
 
-// declare putative X and Y positions for error checking?
 
-
-//////////////////////
-//FUNCTIONS
-
-// two big functions, called playerMoves and monster moves?
-// would nest the player moves forward functions in each
-
-// does it see you and do you win are other functions
-
-
-// function doesItSeeYou(playerX, playerY, monsterX, monsterY, bearing) {
-//   if (playerX === monsterX && bearing === ("N" || "S")) {
-//     if (playerY > monsterY && bearing === "N") {
-//         return true;
-//     } else if (playerY < monsterY && bearing === "S") {
-//         return true;
-//     } else {
-//       return false;
-//     }
-//   } else if (playerY === monsterY && bearing === ("E" || "W") ) {
-//     if (playerX > monsterX && bearing === "E") {
-//         return true;
-//     } else if (playerX < monsterX && bearing === "W") {
-//         return true;
-//     } else {
-//       return false;
-//     }
-//   } else {
-//     return false;
-//   }
-// };
-
-// function doesItSeeYouBETA(playerX, playerY, monsterX, monsterY, bearing) {
-//   if (playerX === monsterX) {
-//     return true;
-//   } else if (playerY === monsterY){
-//     return true;
-//   } else {
-//     return false;
-//   }
-// };
-
-// function monsterTurns(monsterX, monsterY, bearing) {
-//   var cardinalDirections = [W, N, E, S, W];
-//   var indexDirection = cardinalDirections.indexOf(monster.bearing)
-//     }
-// };
-
-
-// function monsterRules(){
-
-//   function monsterMoves(monsterX, monsterY, bearing) {
-//   if (bearing == "N") {
-//     monsterY += 1;
-//   }
-//   else if (bearing == "S") {
-//     monsterY -= 1;
-//   }
-//   else if (bearing == "E") {
-//     monsterX += 1;
-//   }
-//   else{
-//     monsterX -= 1;
-//   }
-
-// };
-
-// when the player isn't moving, the monster is
-// if (playerMoves === false) {
-//   var nextTurn = null
-//   // monster turns if the randomized number is less than 0.5
-//   if ((Math.random()) > 0.5) {
-//     // decides if monster is turning left or right
-//     if ((Math.random()) < 0.5) {
-//       nextTurn == "L"
-//       // Based on bearing, where is it going?
-//     } else {
-//       nextTurn == "R"
-//       // Based on bearing, where is it going?
-//     }
-//     // monster moves forward if the randomized number is less than 0.5
-//   } else {
-//     monsterMoves(monsterX, monsterY, bearing);
-//   }
-//   return monster
-// }
-
-// function playerFunctions() {
-
-
-  // if (sanity && playerMoves){
-  // var playerMove = prompt("In which cardinal would you like to move?");
-  // var putativeX = playerX;
-  // var putativeY = playerY;
-  // // when to check that a player's move is valid?
-
-  // // can I get it to output whether it's one direction in either way
-  // console.log("Itte is now " + (monsterX - playerX) + "places East or West from you and " (monsterY - playerY) + "places North or South from you.");
-  // console.log("You are now "+ (30 - playerX) + "places  West from the amulet and " + (30 - playerY)+ "places South of the amulet.")
-  // playerMoves = false;
-
-
-
-//////////
-
-
-
-
-////////////////////////////
-
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Refactored Code
 
 
+var cardinalDirections = ["N", "E", "S", "W"];
 
+var player = {
+  sanity: true,
+  wonGame: false,
+  posX: 0,
+  posY: 0
+};
 
+player.distance_to_monster = function(monsterX, monsterY) {
+  return (monsterX - this.posX) + " " + (monsterY - this.posY);
+};
 
+var monster = {
+    posX:  Math.floor(Math.random()*10),
+    posY: Math.floor(Math.random()*10),
+    bearing:  cardinalDirections[Math.floor(Math.random()*4)]
+};
 
+function nextMove(x, y, bearing) {
+  this.xPos = x;
+  this.yPos = y;
+  this.bearing = bearing;
+
+}
+
+function playGame() {
+
+    alert("Make it to square 10, 10, without it seeing you!\nCapital letters only, please.")
+
+  function playerGoes(playerX, playerY) {
+      var playerMove = prompt("In which cardinal direction would you like to move?");
+      if (playerMove.includes("N")) {
+          playerY += 1;
+      } else if (playerMove.includes("S")) {
+          playerY -= 1;
+      } else if (playerMove.includes("E")) {
+          playerX += 1;
+      } else {
+          playerX -= 1;
+      }
+      return [playerX, playerY];
+  }
+
+  function monsterGoes(monsterX, monsterY, bearing) {
+      var whichOne = (Math.random() * 100)
+      if (whichOne < 50) {
+          var position = cardinalDirections.indexOf(bearing);
+          if (whichOne < 25) {
+            position = ((position + 1)%4);
+          } else {
+            position = (position - 1)%4;
+          }
+          bearing = cardinalDirections[position];
+      } else {
+          if (bearing === "N") {
+              monsterY += 1;
+          } else if (bearing === "S") {
+              monsterY -= 1;
+          } else if (bearing === "E") {
+              monsterX += 1;
+          } else {
+              monsterX -= 1;
+          }
+        }
+    return [monsterX, monsterY, bearing];
+  }
+
+  function monsterSeesYou(playerX, playerY, monsterX, monsterY, bearing) {
+      if (playerX === monsterX) {
+          if ((playerY > monsterY && bearing === "N") || (playerY < monsterY && bearing === "S")) {
+              return true;
+          } else {
+              return false;
+          }
+      } else if (playerY === monsterY) {
+          if ((playerX > monsterX && bearing === "E") || (playerX < monsterX && bearing === "W")){
+              return true;
+          } else {
+              return false;
+          }
+      } else {
+          return false;
+      }
+  }
+
+  while (player.sanity === true && player.wonGame === false) {
+      var playerArray = playerGoes(player.posX, player.posY);
+      player.posX = playerArray[0];
+      player.posY = playerArray[1];
+      var monsterArray = monsterGoes(monster.posX, monster.posY, monster.bearing);
+      monster.posX = monsterArray[0];
+      monster.posY = monsterArray[1];
+      monster.bearing = monsterArray[2];
+      alert(["You are standing on a tile marked", player.posX, player.posY, ". The monster is on another tile marked", monster.posX, monster.posY, ". It faces the wall marked", monster.bearing].join(" "));
+      if (player.posX === 10 && player.posY === 10) {
+          player.wonGame = true;
+          break;
+      }
+      if (monsterSeesYou(player.posX, player.posY, monster.posX, monster.posY, monster.bearing)) {
+          player.sanity = false;
+          break;
+      } else {
+          continue;
+      }
+  }
+
+  if (player.sanity === false) {
+    console.log("The monster faces you, as a black fog decends to obscure all other things in the dungeon. A single giant eye glares into your very person, as a  scream dies in your dry throat. It's tentacles reach lovingly for your face. Madness descends upon you.\n\nLol, you lose.");
+  }
+
+  if (player.wonGame === true) {
+    console.log("Hey, is that the amulet? Wait, you just won! Good job!");
+  }
+
+}
+
+playGame();
+
+\
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Reflection
 //
 //
