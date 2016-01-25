@@ -1,9 +1,9 @@
+/// Separate Numbers with Commas in JavaScript **Pairing Challenge**
 
- /// Separate Numbers with Commas in JavaScript **Pairing Challenge**
 
+// I worked on this challenge with: Charlie Bliss
 
-// I worked on this challenge with:
-
+////////////////////////////////////////////////////////////////////////
 // Pseudocode
 // Input - an integer number
 
@@ -20,16 +20,11 @@
 //            terminate loop
 //             reverse string again
 //              return string to user
-
-
-// 000,0
-// 000,00
-///000,000
-///000,000,0
-
 // Output - a string that is the integer with inserted commas
 
+////////////////////////////////////////////////////////////////////////
 // Initial Solution
+
 function separateComma(int){
   var array = int.toString().split("").reverse();
   var counter = 0;
@@ -46,19 +41,21 @@ function separateComma(int){
 }
 
 
-
-
-console.log(separateComma(1234567))
-
-
+////////////////////////////////////////////////////////////////////////
 // Refactored Solution
 
 
+function separateComma(int){
+  return int.toLocaleString()
+}
 
-
+}
 // Your Own Tests (OPTIONAL)
 
+console.log(separateComma(1234567))
 
-
-
+////////////////////////////////////////////////////////////////////////
 // Reflection
+
+// It was difficult because the mechanics of a for loop operate completely differently from each loops in Ruby. I wanted to use a for loop to be similar to each_slice in Ruby, but I couldn't make it work.
+// I learned that for loops are the best way to iterate over arrays, our way was relatively a pain. We had fun with toLocaleString and splice.
