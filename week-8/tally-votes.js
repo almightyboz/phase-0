@@ -68,16 +68,16 @@ var officers = {
 // input - A data structure that links the name of a person to their voter ballot. Each ballot is a data structure in itself, linking an office to the name of the candidates the voter is voting for
 
 // Loop through each voter name on the inputted structure
-//   loop through each individual vote (for each position) on the ballot
+//   loop through each individual voter's vote (for each position) on the ballot
 //      identify the office/position in that particular vote, and the candidate
-//      assign that vote to another data structure that stores the vote counts for each office
+//      assign that vote to another data structure that stores the names, vote counts, and office
 //     IF the candidate's name is not in the structure for that position
 //         add the name as a new item, and insert 1 as the count
 //    ELSE IF the candidate's name is already in the structure
 //          add one to the count of votes the candidate received for that office
 // return a data structure that is a list of offices, and each office points to a list of candidate names and the number of votes each candidate received
-// Take that data structure and loop through each office at a time
-//    FOR each office, find the name of the candidate that is linked to the largest number of votes
+// Take that data structure and loop through each S.G. office at a time
+//    FOR each S.G. office, find the name of the candidate that is linked to the largest number of votes
 //    Write that candidate's name to another data structure that stores the winners of the office
 // return data structure of winners as the output
 
@@ -86,17 +86,61 @@ var officers = {
 // __________________________________________
 // Initial Solution
 
+//EXTRACT NAME
+//Loops through each item in votes to search for voter
 for (var voter in votes) {
+  // Tests if statement is true. Returns boolean.
+  // statement is whether the votes object has a property called voter
    if (votes.hasOwnProperty(voter)) {
+    // sets variable called ballot that is the "value" to the key that is the
       var ballot = votes[voter];
-      for (var vote in ballot) {
-         if (ballot.hasOwnProperty(vote)) {
-            voteCount.office[vote] += 1; //left off here
+      console.log(ballot + "Is the ballot")
+      console.log(voter+ "Is the voter")
+      for (var office in ballot) {
+        console.log(office + "is the office")
+         if (ballot.hasOwnProperty(office)) {
+            //console.log("It has the property")
+            var name = ballot[office];
+            console.log(name + "Is the name")
+            //voteCount.office] = name; //left off here
          }
       }
    }
+};
+
+for (var voter in votes) {
+   if (votes.hasOwnProperty(voter)) {
+      var ballot = votes[voter];
+      console.log(ballot + "Is the ballot");
+      console.log(voter+ "Is the voter");
+      for (var office in ballot) {
+        console.log(office + "is the office");
+         if (ballot.hasOwnProperty(office)) {
+            var name = ballot[office];
+            console.log(name + "Is the name");
+            break;
+
+         }
+      }
+   }
+};
+
+
+for (office in voteCount) {
+
 }
 
+console.log(voteCount)
+
+// a = {
+//   mother: "fucker",
+//   ass: "hole",
+// };
+
+// console.log(a)
+// console.log (a[0])
+// console.log(a.mother)
+// console.log(a.ass)
 
 
 // for (var name in votes) {
