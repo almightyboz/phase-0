@@ -53,7 +53,81 @@ gradebook.getAverage = function(name) {
 };
 
 
+var students = ["Joseph", "Susan", "William", "Elizabeth"];
 
+var scores = [ [80, 70, 70, 100],
+               [85, 80, 90, 90],
+               [75, 70, 80, 75],
+               [100, 90, 95, 85] ];
+
+
+
+
+
+
+// __________________________________________
+// Write your code below.
+
+// var gradebook = {
+//   Joseph: {
+//     testScores: scores[0],
+//   },
+//   Susan: {
+//     testScores: scores[1],
+//   },
+//   William: {
+//     testScores: scores[2],
+//   },
+//   Elizabeth: {
+//     testScores: scores[3],
+//   },
+//   addScore: function addScore(name, score) {
+//     gradebook[name].testScores.push(score);
+//  },
+//   getAverage: function getAverage(name) {
+//     return average(gradebook[name]);
+//   }
+// };
+
+
+var average = function(grades) {
+  var sumOfScores = 0;
+  // console.log(sumOfScores);
+  for (var score in grades) {
+    // console.log(sumOfScores.typeof);
+    sumOfScores += grades[score];
+    // console.log(sumOfScores)
+  }
+  // console.log(grades.length)
+  return sumOfScores/(grades.length);
+}
+
+console.log(average([1,2,3])=== 2);
+console.log(average([3,4,5]));
+
+var gradebook = {
+  Joseph: {
+    testScores: scores[0],
+  },
+  Susan: {
+    testScores: scores[1],
+  },
+  William: {
+    testScores: scores[2],
+  },
+  Elizabeth: {
+    testScores: scores[3],
+  },
+  addScore: function addScore(name, score) {
+    gradebook[name].testScores.push(score);
+ },
+  getAverage: function getAverage() {
+  }
+};
+
+gradebook.getAverage = function(name) {
+  return average(gradebook[name].testScores);
+}
 
 
 // __________________________________________
@@ -61,19 +135,43 @@ gradebook.getAverage = function(name) {
 
 
 
+var average = function(grades) {
+  var sumOfScores = 0;
+  for (var score in grades) {
+     sumOfScores += grades[score];
+  }
+  return sumOfScores/(grades.length);
+}
 
+var gradebook = {
+  Joseph: {
+    testScores: scores[0],
+  },
+  Susan: {
+    testScores: scores[1],
+  },
+  William: {
+    testScores: scores[2],
+  },
+  Elizabeth: {
+    testScores: scores[3],
+  },
+  addScore: function addScore(name, score) {
+    gradebook[name].testScores.push(score);
+ },
+};
 
-
+gradebook.getAverage = function(name) {
+  return average(gradebook[name].testScores);
+};
 
 
 // __________________________________________
 // Reflect
 
-
-
-
-
-
+// I learned that adding functions to objects isn't as difficult as I thought it would be, although I'm still exploring the applications of it. I suspect one can use functions within objects similarly to methods within classes in Ruby. JavaScript allows one to modify functions from without easily.
+// With for loops, JavaScript can easily iterate over an array, or a set quantity like the number of properties in an object. It was with this challenge that I realized that we don't need to iterate using each loops like in Ruby.
+// I didn't learn any new methods, aside from the methods used in the text code below.
 
 
 
