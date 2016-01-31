@@ -27,5 +27,6 @@
 
 ***
 ##Release 7
+![My schema]()
 
 
