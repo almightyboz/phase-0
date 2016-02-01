@@ -175,6 +175,8 @@ def assert
   raise "Assertion failed!" while yield
 end
 
+# 4. Convert your driver test code from that challenge into Assert Statements
+
 sample_1 = [1,2,2,3,4]
 sample_2 = []
 sample_3 = ["cat", "cat", "dog"]
@@ -186,10 +188,11 @@ assert { mode(sample_3) == "cat" }
 assert { mode(sample_4) == "mom" }
 
 
-# 4. Convert your driver test code from that challenge into Assert Statements
-
-
-
-
-
 # 5. Reflection
+
+######## What concepts did you review or learn in this challenge?
+# I learned assert statements, reviewed the importance of pseudocode in my Dr. Evil Cipher, debugging with lots of comments and printing values of variables, and practiced iterating over arrays.
+######## What is still confusing to you about Ruby?
+# Knowing when I can refactor, and using what.
+######## What are you going to study to get more prepared for Phase 1?
+# Class inheritance, it is the second most confusing thing to me about Ruby so far.
