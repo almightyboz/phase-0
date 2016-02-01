@@ -86,101 +86,155 @@ var officers = {
 // __________________________________________
 // Initial Solution
 
-//EXTRACT NAME
-//Loops through each item in votes to search for voter
-for (var voter in votes) {
-  // Tests if statement is true. Returns boolean.
-  // statement is whether the votes object has a property called voter
-   if (votes.hasOwnProperty(voter)) {
-    // sets variable called ballot that is the "value" to the key that is the
-      var ballot = votes[voter];
-      console.log(ballot + "Is the ballot")
-      console.log(voter+ "Is the voter")
-      for (var office in ballot) {
-        console.log(office + "is the office")
-         if (ballot.hasOwnProperty(office)) {
-            //console.log("It has the property")
-            var name = ballot[office];
-            console.log(name + "Is the name")
-            //voteCount.office] = name; //left off here
-         }
-      }
-   }
-};
-
-for (var voter in votes) {
-   if (votes.hasOwnProperty(voter)) {
-      var ballot = votes[voter];
-      console.log(ballot + "Is the ballot");
-      console.log(voter+ "Is the voter");
-      for (var office in ballot) {
-        console.log(office + "is the office");
-         if (ballot.hasOwnProperty(office)) {
-            var name = ballot[office];
-            console.log(name + "Is the name");
-            break;
-
-         }
-      }
-   }
-};
-
-
-for (office in voteCount) {
-
-}
-
-console.log(voteCount)
-
-// a = {
-//   mother: "fucker",
-//   ass: "hole",
+// //EXTRACT NAME
+// //Loops through each item in votes to search for voter
+// for (var voter in votes) {
+//   // Tests if statement is true. Returns boolean.
+//   // statement is whether the votes object has a property called voter
+//    if (votes.hasOwnProperty(voter)) {
+//     // sets variable called ballot that is the "value" to the key that is the
+//       var ballot = votes[voter];
+//       console.log(ballot + "Is the ballot")
+//       console.log(voter+ "Is the voter")
+//       for (var office in ballot) {
+//         console.log(office + "is the office")
+//          if (ballot.hasOwnProperty(office)) {
+//             //console.log("It has the property")
+//             var name = ballot[office];
+//             console.log(name + "Is the name")
+//             //voteCount.office] = name; //left off here
+//          }
+//       }
+//    }
 // };
 
-// console.log(a)
-// console.log (a[0])
-// console.log(a.mother)
-// console.log(a.ass)
 
 
-// for (var name in votes) {
-//   if (votes.hasOwnProperty(name)) {
-//     var office = votes[name];
-//     for (var vote in office) {
-//       if (office.hasOwnProperty(vote)) {
-//         //CODE WE WANT IT TO DO!!!
-//         voteCount.office[name] = 1
+// for (var voter in votes) {
+//    if (votes.hasOwnProperty(voter)) {
+//       var ballot = votes[voter];
+//       console.log(ballot + "Is the ballot");
+//       console.log(voter+ "Is the voter");
+//       for (var office in ballot) {
+//         console.log(office + "is the office");
+//          if (ballot.hasOwnProperty(office)) {
+//             var name = ballot[office];
+//             console.log(name + "Is the name");
+//             break;
+
+//          }
 //       }
-//     }
+//    }
+// };
+
+// __________________________________________
+// Initial Solution
+
+// voteCount.tallyVotes = function(votes) {
+//   for (var voter in votes) {
+//     if (votes.hasOwnProperty(voter)) {
+//       var ballot = votes[voter];
+//         for (var vote in ballot) {
+//           if (ballot.hasOwnProperty(vote)) {
+//             var candidate = ballot[vote];
+//             var numberOfVotes = [];
+//             if (voteCount[vote][candidate]) {
+//               voteCount[vote][candidate] += 1;
+//             } else {
+//               voteCount[vote][candidate] = 1;
+//             }
+//             // numberOfVotes.push(voteCount[vote][candidate]);;
+//           }
+//         }
+//      }
 //   }
 // }
 
 
 
-//   console.log(votes.Alex)
+// voteCount.tallyVotes = function(votes) {
+  for (var voter in votes) {
+    if (votes.hasOwnProperty(voter)) {
+      var ballot = votes[voter];
+        for (var vote in ballot) {
+          if (ballot.hasOwnProperty(vote)) {
+            var candidate = ballot[vote];
+            var numberOfVotes = [];
+            if (voteCount[vote][candidate]) {
+              voteCount[vote][candidate] += 1;
+            } else {
+              voteCount[vote][candidate] = 1;
+            }
+            // numberOfVotes.push(voteCount[vote][candidate]);;
+          }
+        }
+     }
+}
 
- // voteCount.president["alex"] = 1
- console.log(voteCount)
+console.log(voteCount);
 
+for (var offices in voteCount) {
+if (voteCount.hasOwnProperty(offices)) {
+  // console.log(offices + "Is the office");
+  var numberOfVotes = 0;
+  var candidate = voteCount[offices];
+    for (var name in candidate) {
+      if (candidate.hasOwnProperty(name)) {
+        // console.log(name + "is the name")
+        var votes = candidate[name];
+        // console.log(votes + "is the number of votes");
+        if (numberOfVotes < votes) {
+          numberOfVotes = votes;
+          officers[offices] = name;
+        }
+      }
+    }
+        // numberOfVotes.push(voteCount[vote][candidate]);;
+  }
+}
 
+console.log(officers)
 
 
 
 // __________________________________________
 // Refactored Solution
 
+voteCount.tallyVotes = function(office) {
+}
 
+for (var voter in votes) {
+  var ballot = votes[voter];
+  for (var vote in ballot) {
+    var candidate = ballot[vote];
+    if (voteCount[vote][candidate]) {
+      voteCount[vote][candidate] += 1;
+    } else {
+      voteCount[vote][candidate] = 1;
+    }
+  }
+}
 
-
-
+for (var offices in voteCount) {
+  var numberOfVotes = 0;
+  var candidate = voteCount[offices];
+    for (var name in candidate) {
+      var votes = candidate[name];
+      if (numberOfVotes < votes) {
+          numberOfVotes = votes;
+          officers[offices] = name;
+      }
+    }
+  }
+}
 
 // __________________________________________
 // Reflection
 
-
-
-
-
+// My partner and I really struggled with this challenge and I think it shows. I am very sure that we could have used object methods stored in properties for one or either object. But I wasn't sure how to do it, and I was too late to talk to the guides. Although it also wasn't covered well this week, so perhaps I'm thinking too far ahead.
+// I learned that if there is a difference between diving into the function with for loops or alternating with an if loop of hasOwnProperty, it is a way that doesn't affect functionality in the limited way we interacted with our functions. hasOwnProperty is the best method I've learned this challenge. My loose understanding is that using that method will be a poor move if the code is kept for a long time and maintained and built upon. Because JavaScript has prototypical inheritance, a child object could inherit that functionality when it's function is different from the one that it's parent object had. I will try to use it going forward.
+// The concept of debugging through printing variables as they traveled through the functions. That saved us more time than anything, because it proved that the loop was moving, where it was breaking, and which variables were which. I got my partner on board at the end.
+//
 
 // __________________________________________
 // Test Code:  Do not alter code below this line.
