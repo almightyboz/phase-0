@@ -131,3 +131,65 @@ p dr_evils_cipher("qmrm#qi,*mj^m#iziv^pswx#csy#m^hsr'x%orsa^alex@m%asyph^hs.
 
 ##############################################################################
 
+# U2.W6: Testing Assert Statements
+
+# I worked on this challenge by myself.
+
+
+# 2. Review the simple assert statement
+
+# def assert
+#   raise "Assertion failed!" unless yield
+# end
+
+# name = "bettysue"
+# assert { name == "bettysue" }
+# assert { name == "billybob" }
+
+# 2. Pseudocode what happens when the code above runs
+
+# Creates an operation called assert that doesn't need any inputted information to run when it's operation is "switched on."
+# UNLESS, as the operation is being run, a correct assertion is made within a statement that follows the statement that switches on the function
+# => The computer tells the user that the assertion has failed.
+#END
+# A new variable called "name" will store a string called "bettysue"
+# The user turns on the assert function to analyze a block of code in the form of a boolean statement. (The output is true.)
+# The user turns on the assert function to analyze a block of code in the form of a boolean statement. (The output is an error message on this line.)
+#However, the error is on line 146, as the error will be raised if the boolean returned is "True"
+
+# 3. Copy your selected challenge here
+
+def mode(list)
+ mode_hash = Hash.new
+  list.each do |item|
+    if mode_hash.has_key?(item)
+      mode_hash[item] += 1
+    else
+      mode_hash[item] = 1
+    end
+  end
+  return mode_hash.select{|key, value| value == mode_hash.values.max}.keys
+end
+
+def assert
+  raise "Assertion failed!" while yield
+end
+
+sample_1 = [1,2,2,3,4]
+sample_2 = []
+sample_3 = ["cat", "cat", "dog"]
+sample_4 = ["mom", "mom", "mom"]
+
+assert { (mode(sample_1)) == 2 }
+assert { (mode(sample_2)) == nil }
+assert { mode(sample_3) == "cat" }
+assert { mode(sample_4) == "mom" }
+
+
+# 4. Convert your driver test code from that challenge into Assert Statements
+
+
+
+
+
+# 5. Reflection
