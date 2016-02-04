@@ -153,80 +153,95 @@ var officers = {
 
 
 // voteCount.tallyVotes = function(votes) {
-  for (var voter in votes) {
-    if (votes.hasOwnProperty(voter)) {
-      var ballot = votes[voter];
-        for (var vote in ballot) {
-          if (ballot.hasOwnProperty(vote)) {
-            var candidate = ballot[vote];
-            var numberOfVotes = [];
-            if (voteCount[vote][candidate]) {
-              voteCount[vote][candidate] += 1;
-            } else {
-              voteCount[vote][candidate] = 1;
-            }
-            // numberOfVotes.push(voteCount[vote][candidate]);;
-          }
-        }
-     }
-}
+//   for (var voter in votes) {
+//     if (votes.hasOwnProperty(voter)) {
+//       var ballot = votes[voter];
+//         for (var vote in ballot) {
+//           if (ballot.hasOwnProperty(vote)) {
+//             var candidate = ballot[vote];
+//             var numberOfVotes = [];
+//             if (voteCount[vote][candidate]) {
+//               voteCount[vote][candidate] += 1;
+//             } else {
+//               voteCount[vote][candidate] = 1;
+//             }
+//             // numberOfVotes.push(voteCount[vote][candidate]);;
+//           }
+//         }
+//      }
+// }
 
-console.log(voteCount);
+// console.log(voteCount);
 
-for (var offices in voteCount) {
-if (voteCount.hasOwnProperty(offices)) {
-  // console.log(offices + "Is the office");
-  var numberOfVotes = 0;
-  var candidate = voteCount[offices];
-    for (var name in candidate) {
-      if (candidate.hasOwnProperty(name)) {
-        // console.log(name + "is the name")
-        var votes = candidate[name];
-        // console.log(votes + "is the number of votes");
-        if (numberOfVotes < votes) {
-          numberOfVotes = votes;
-          officers[offices] = name;
-        }
-      }
-    }
-        // numberOfVotes.push(voteCount[vote][candidate]);;
-  }
-}
+// for (var offices in voteCount) {
+// if (voteCount.hasOwnProperty(offices)) {
+//   // console.log(offices + "Is the office");
+//   var numberOfVotes = 0;
+//   var candidate = voteCount[offices];
+//     for (var name in candidate) {
+//       if (candidate.hasOwnProperty(name)) {
+//         // console.log(name + "is the name")
+//         var votes = candidate[name];
+//         // console.log(votes + "is the number of votes");
+//         if (numberOfVotes < votes) {
+//           numberOfVotes = votes;
+//           officers[offices] = name;
+//         }
+//       }
+//     }
+//         // numberOfVotes.push(voteCount[vote][candidate]);;
+//   }
+// }
 
-console.log(officers)
+// console.log(officers)
 
 
 
 // __________________________________________
 // Refactored Solution
 
-voteCount.tallyVotes = function(office) {
-}
 
-for (var voter in votes) {
-  var ballot = votes[voter];
-  for (var vote in ballot) {
-    var candidate = ballot[vote];
-    if (voteCount[vote][candidate]) {
-      voteCount[vote][candidate] += 1;
-    } else {
-      voteCount[vote][candidate] = 1;
-    }
-  }
-}
-
-for (var offices in voteCount) {
-  var numberOfVotes = 0;
-  var candidate = voteCount[offices];
-    for (var name in candidate) {
-      var votes = candidate[name];
-      if (numberOfVotes < votes) {
-          numberOfVotes = votes;
-          officers[offices] = name;
+ function tallyVotes(votes, voteCount) {
+  for (var voter in votes) {
+    var ballot = votes[voter];
+    for (var vote in ballot) {
+      var candidate = ballot[vote];
+      if (voteCount[vote][candidate]) {
+        voteCount[vote][candidate] += 1;
+      } else {
+        voteCount[vote][candidate] = 1;
       }
     }
   }
 }
+
+
+
+
+// for (var voter in votes) {
+//   var ballot = votes[voter];
+//   for (var vote in ballot) {
+//     var candidate = ballot[vote];
+//     if (voteCount[vote][candidate]) {
+//       voteCount[vote][candidate] += 1;
+//     } else {
+//       voteCount[vote][candidate] = 1;
+//     }
+//   }
+// }
+
+// for (var offices in voteCount) {
+//   var numberOfVotes = 0;
+//   var candidate = voteCount[offices];
+//     for (var name in candidate) {
+//       var votes = candidate[name];
+//       if (numberOfVotes < votes) {
+//           numberOfVotes = votes;
+//           officers[offices] = name;
+//       }
+//     }
+//   }
+// }
 
 // __________________________________________
 // Reflection
