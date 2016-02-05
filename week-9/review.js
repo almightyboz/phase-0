@@ -30,7 +30,9 @@ function fizzbuzz() {
 
 fizzbuzz();
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Calculate median
+
 //PSEUDOCODE
 //INPUT - list of data elements
 // sort the list into numeric or alphabetical order
@@ -46,17 +48,56 @@ fizzbuzz();
 // OUTPUT - middle element in the data set.
 //If there's an even number of items, will have to
 
+
+//ORIGINAL FLAVOR
+// function median(list) {
+//   list = list.sort();
+//   var half = ((list.length) / 2);
+//   // even numbers
+//   if (list.length % 2 === 0) {
+//     console.log("It's an even number");
+//     var otherHalf = half - 1 ;
+//     var numerator = list[half] + list[otherHalf];
+//     return numerator / 2;
+//   // odd numbers
+//   } else {
+//     // console.log("It's an odd number");
+//     // // console.log(half + 0.5);
+//     // console.log(list[(half - 0.5)]);
+//     return list[(half - 0.5)];
+//   }
+// }
+
+//REFACTORED
 function median(list) {
   list.sort();
-
+  var half = list.length / 2;
+  if (list.length % 2 === 0) {
+    var numerator = list[half] + list[half - 1];
+    return numerator / 2;
+  } else {
+    return list[half - 0.5];
+  }
 }
 
-//TEST
+//TEST CODE
+list0 = [1,2,3,4];
 list1 = [1,2,3,4,5];
 list2 = ["apple","cherry","banana"];
 list3 = [-100, 100];
 
+console.log(median(list0) === 2.5);
 console.log(median(list1) === 3);
 console.log(median(list2) === "banana");
 console.log(median(list3) === 0);
-// console.log()
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// REFLECTION
+//
+// What concepts did you solidify in working on this challenge?
+
+// What was the most difficult part of this challenge?
+
+// Did you solve the problem in a new way this time?
+
+// Was your pseudocode different from the Ruby version? What was the same and what was different?
