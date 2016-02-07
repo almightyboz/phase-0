@@ -1,7 +1,7 @@
 # Create a Playlist from Driver Code
 
-# I worked on this challenge [by myself, with: ].
-# I spent [#] hours on this challenge.
+# I worked on this challenge with: Aaron Opfahl.
+# I spent 2.5 hours on this challenge.
 
 
 # Pseudocode
@@ -223,3 +223,10 @@ my_playlist.display
 
 
 # Reflection
+
+###### What concepts did you review in this challenge?
+# Reading error messages and using accessors. Also programming without well defined pseudocode, which worked surprisingly well.
+###### What is still confusing to you about Ruby?
+# Inheritance confuses me still. I haven't had a chance to use it in a detailed way, so I'm less sure of when I'll need it.
+###### What are you going to study to get more prepared for Phase 1?
+# I am going to skim more of Well Grounded Rubyist, and practice pseudocoding challenges as well.
